@@ -28,9 +28,23 @@ app.use(bodyparser.json());
 //         return filename;
 //     }
 // }))
-app.use(busboyBodyParser({ limit: '5mb' }));
+// app.use(busboyBodyParser({ limit: '5mb' }));
 
-app.use(cors({origin: 'http://localhost:4200'}));
+// app.use(cors({origin: 'http://localhost:4200'}));
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    if (req.method === "OPTIONS") {
+      res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+      return res.status(200).json({});
+    }
+    next();
+  });
+
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log('Server started at port : 3000'));
