@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://pavanSE:pavanse@project-database-o2ixb.mongodb.n
 
 mongoose.Promise = global.Promise;
 module.exports = mongoose;
-
+// jjjjjjjjj
 
 // const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://pavanSE:pavanse@project-database-o2ixb.mongodb.net/test?retryWrites=true&w=majority";
