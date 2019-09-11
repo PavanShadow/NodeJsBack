@@ -31,8 +31,9 @@ app.use(bodyparser.json());
 app.use(busboyBodyParser({ limit: '5mb' }));
 
 app.use(cors({origin: 'http://localhost:4200'}));
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () => console.log('Server started at port : 3000'));
+app.listen(port, () => console.log('Server started at port : 3000'));
 
 app.use('/products', productController);
 app.use('/orders', orderController);
