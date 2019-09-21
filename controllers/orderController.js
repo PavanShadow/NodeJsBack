@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
             res.send(docs);
         else
             console.log('Error in retriveing Orders');
-    }).sort({date:1});
+    }).sort({date:-1});
 });
 
 router.get('/:id', (req, res) => {
