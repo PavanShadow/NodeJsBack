@@ -30,7 +30,7 @@ app.use(bodyparser.json());
 // }))
 // app.use(busboyBodyParser({ limit: '5mb' }));
 
-app.use(cors({origin: 'http://localhost:4200'}));
+// app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
