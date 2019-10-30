@@ -46,10 +46,9 @@ app.use((req, res, next) => {
   });
 
 
-const port = process.env.PORT || 3000;
-
-app.listen(port, () => console.log('Server started at port : 3000'));
-
 app.use('/products', productController);
 app.use('/orders', orderController);
 app.use('/admins', adminController);
+
+
+module.exports = app
