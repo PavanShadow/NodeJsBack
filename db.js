@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://pavanSE:pavanse@project-database-o2ixb.mongodb.net/designproject?retryWrites=true&w=majority', 
-{   
+require('dotenv').config();
+mongoose.connect(process.env.MONGO_URI,
+{
     useNewUrlParser:true,
     useCreateIndex:true
 }
